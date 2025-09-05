@@ -120,25 +120,30 @@ a {
 }
 
 /* Experience Section */
+/* Experience Section */
 .ex {
   width: 100%;
   max-width: 900px;
   margin: auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .ex-items {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: var(--bg-color);
   margin: 20px auto;
-  padding: 40px;
+  padding: 20px;
   max-width: 1000px;
   min-height: 200px;
   border-radius: 10px;
   border: 1.5px solid yellow;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-wrap: wrap; /* ✅ Allow content to wrap inside the box */
+  box-sizing: border-box;
 }
 
 .ex-items:hover {
@@ -149,17 +154,34 @@ a {
 .ex-items img {
   width: 120px;
   border-radius: 5px;
-  top:-10px;
+  flex-shrink: 0; /* ✅ Prevent the logo from shrinking */
 }
 
 .ex-items .right {
-  text-align: left;
   flex: 1;
+  min-width: 200px;
+  text-align: left;
   margin-left: 20px;
+  overflow-wrap: break-word; /* ✅ Prevent text overflow */
+  box-sizing: border-box;
 }
+
+.ex-items .right .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ Wrap the title and date on small screens */
+}
+
 .ex-items .right .job-title {
   font-size: 1.4rem;
   color: yellowgreen;
+}
+
+.date {
+  font-size: 1rem;
+  color: white;
+  margin-left: 15px;
 }
 
 .ex-items .right h4 {
@@ -167,13 +189,37 @@ a {
   color: #fff;
 }
 
-.ex-items p, .ex-items li {
+.ex-items p,
+.ex-items li {
   font-size: 0.95rem;
   color: #ccc;
+  margin-top: 10px;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
 .ex-items li {
   margin-bottom: 5px;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 768px) {
+  .ex-items {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .ex-items .right {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .date {
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
 }
 /* Skills */
 .skills {

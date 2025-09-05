@@ -121,6 +121,7 @@ a {
 
 /* Experience Section */
 /* Experience Section */
+/* Experience Section */
 .ex {
   width: 100%;
   max-width: 900px;
@@ -137,12 +138,11 @@ a {
   margin: 20px auto;
   padding: 20px;
   max-width: 1000px;
-  min-height: 200px;
   border-radius: 10px;
   border: 1.5px solid yellow;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-wrap: wrap; /* ✅ Allow content to wrap inside the box */
+  flex-wrap: wrap; /* ✅ allow wrapping */
   box-sizing: border-box;
 }
 
@@ -154,23 +154,17 @@ a {
 .ex-items img {
   width: 120px;
   border-radius: 5px;
-  flex-shrink: 0; /* ✅ Prevent the logo from shrinking */
+  flex-shrink: 0; /* ✅ prevents shrinking of logo */
 }
 
 .ex-items .right {
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
   text-align: left;
   margin-left: 20px;
-  overflow-wrap: break-word; /* ✅ Prevent text overflow */
-  box-sizing: border-box;
-}
-
-.ex-items .right .top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* ✅ Wrap the title and date on small screens */
+  overflow-wrap: break-word; /* ✅ wraps long words */
+  word-wrap: break-word;
+  max-width: calc(100% - 140px); /* ✅ prevents overflow past logo */
 }
 
 .ex-items .right .job-title {
@@ -202,7 +196,7 @@ a {
   margin-bottom: 5px;
 }
 
-/* ✅ Mobile responsiveness */
+/* ✅ Mobile responsive fix */
 @media (max-width: 768px) {
   .ex-items {
     flex-direction: column;
@@ -210,9 +204,13 @@ a {
     text-align: left;
   }
 
+  .ex-items img {
+    margin-bottom: 15px;
+  }
+
   .ex-items .right {
     margin-left: 0;
-    margin-top: 15px;
+    max-width: 100%;
   }
 
   .date {

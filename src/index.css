@@ -120,18 +120,9 @@ a {
 }
 
 /* Experience Section */
-/* Experience Section */
-/* Experience Section */
-.ex {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .ex-items {
   display: flex;
+  flex-wrap: wrap; /* ✅ Helps on smaller screens */
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--bg-color);
@@ -142,8 +133,8 @@ a {
   border: 1.5px solid yellow;
   box-shadow: var(--box-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-wrap: wrap; /* ✅ allow wrapping */
   box-sizing: border-box;
+  overflow: hidden; /* ✅ Forces content to stay inside */
 }
 
 .ex-items:hover {
@@ -154,17 +145,18 @@ a {
 .ex-items img {
   width: 120px;
   border-radius: 5px;
-  flex-shrink: 0; /* ✅ prevents shrinking of logo */
+  flex-shrink: 0; /* Prevents logo from shrinking */
 }
 
 .ex-items .right {
   flex: 1;
-  min-width: 250px;
-  text-align: left;
   margin-left: 20px;
-  overflow-wrap: break-word; /* ✅ wraps long words */
+  display: flex;
+  flex-direction: column; /* ✅ Stack title, date, and list vertically */
+  justify-content: flex-start;
+  overflow-wrap: break-word;
   word-wrap: break-word;
-  max-width: calc(100% - 140px); /* ✅ prevents overflow past logo */
+  max-width: calc(100% - 140px);
 }
 
 .ex-items .right .job-title {
@@ -172,36 +164,32 @@ a {
   color: yellowgreen;
 }
 
-.date {
+.ex-items .right .date {
   font-size: 1rem;
   color: white;
-  margin-left: 15px;
+  margin: 5px 0 15px 0; /* spacing between title and list */
 }
 
-.ex-items .right h4 {
-  font-size: 1.3rem;
-  color: #fff;
+.ex-items ul {
+  list-style-type: disc;
+  padding-left: 20px; /* ✅ Indentation for bullets */
+  margin: 0;
 }
 
-.ex-items p,
 .ex-items li {
   font-size: 0.95rem;
   color: #ccc;
-  margin-top: 10px;
+  margin-bottom: 8px;
   line-height: 1.4;
   word-wrap: break-word;
 }
 
-.ex-items li {
-  margin-bottom: 5px;
-}
-
-/* ✅ Mobile responsive fix */
+/* ✅ Mobile responsiveness */
 @media (max-width: 768px) {
   .ex-items {
     flex-direction: column;
-    align-items: flex-start;
     text-align: left;
+    padding: 15px;
   }
 
   .ex-items img {
@@ -213,10 +201,8 @@ a {
     max-width: 100%;
   }
 
-  .date {
-    margin-left: 0;
-    margin-top: 5px;
-    font-size: 0.9rem;
+  .ex-items ul {
+    padding-left: 15px;
   }
 }
 /* Skills */

@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "role": "   Java Programmer",
-    "organisation": "CodSoft",
-    "startDate": "Sep 2023",
-    "endDate": "Oct 2023",
-    "location": "Remote",
+    "role": "   Software Developer",
+    "organisation": "Virtual Interactive Solutionz Pvt. Ltd",
+    "startDate": "June 2025",
+    //"endDate": "",
+    "location": "Onsite",
     "experiences": [
-      "Built four real-world applications using Java",
-      "Gained hands-on coding and proble-solving skills"
+      "Built and managed automation workflow using N8N Integrating multiple APIs and services",
+      "Develop custom nodes and triggers in N8N to support business requirements"
     ],
     "imageSrc": "company/codsoft.png"
   }

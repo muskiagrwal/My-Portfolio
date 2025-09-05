@@ -149,6 +149,7 @@ a {
 .ex-items img {
   width: 120px;
   border-radius: 5px;
+  top:-10px;
 }
 
 .ex-items .right {
